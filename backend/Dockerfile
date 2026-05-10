@@ -6,4 +6,4 @@ RUN pip install --no-cache-dir -r requirements.txt && echo "BUILD_OK_v2"
 COPY . .
 
 EXPOSE 8000
-CMD ["python", "-m", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD python -m uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}
