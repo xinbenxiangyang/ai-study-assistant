@@ -1,2 +1,2 @@
 [deploy]
-startCommand = "which python || echo 'NO PYTHON'; python --version || echo 'NO VERSION'; pip install -r requirements.txt || echo 'PIP FAILED'; python -m uvicorn main:app --host 0.0.0.0 --port $PORT || echo 'UVICORN FAILED'"
+startCommand = "python -m uvicorn main:app --host 0.0.0.0 --port $PORT"
