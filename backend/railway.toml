@@ -1,2 +1,2 @@
 [deploy]
-startCommand = "python -m pip install -r requirements.txt && python -m uvicorn main:app --host 0.0.0.0 --port $PORT"
+startCommand = "echo '=== START ===' && which python && python --version && which pip && pip install -r requirements.txt 2>&1 && echo '=== UVICORN ===' && python -m uvicorn main:app --host 0.0.0.0 --port $PORT 2>&1"
