@@ -1,6 +1,6 @@
 [build]
 builder = "nixpacks"
-configFile = "nixpacks.toml"
+buildCommand = "pip install --no-cache-dir -r requirements.txt 2>&1 && echo '=== DEPLOY CHECK ===' && python -c 'import uvicorn; print(\"uvicorn OK\")' && python -c 'import fastapi; print(\"fastapi OK\")' && python -c 'import anthropic; print(\"anthropic OK\")' && python -c 'import supabase; print(\"supabase OK\")' && python -c 'import fitz; print(\"PyMuPDF OK\")' && python -c 'import httpx; print(\"httpx OK\")'"
 
 [deploy]
-startCommand = "uvicorn main:app --host 0.0.0.0 --port $PORT"
+startCommand = "python -m uvicorn main:app --host 0.0.0.0 --port $PORT"
