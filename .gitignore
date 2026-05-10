@@ -1,0 +1,11 @@
+node_modules/
+__pycache__/
+.env
+.env.local
+*.pyc
+.next/
+.DS_Store
+data/users.json
+data/verification_codes.json
+.DS_Store
+*.pyc

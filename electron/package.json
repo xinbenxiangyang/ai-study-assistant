@@ -1,0 +1,33 @@
+{
+  "name": "xinbenxiangyang",
+  "version": "1.0.0",
+  "description": "心本向阳 - AI 学习助手桌面应用",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build-mac": "electron-builder --mac",
+    "build-win": "electron-builder --win"
+  },
+  "build": {
+    "appId": "com.xinbenxiangyang.study-assistant",
+    "productName": "心本向阳",
+    "files": [
+      "main.js",
+      "preload.js",
+      "../frontend/out/**/*",
+      "../backend/**/*"
+    ],
+    "mac": {
+      "target": "dmg",
+      "icon": "icon.png"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "icon.png"
+    }
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0"
+  }
+}
